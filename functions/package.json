@@ -1,5 +1,5 @@
 {
-  "name": "functions",
+  "name": "frag-oliver-api",
   "scripts": {
     "lint": "eslint --ext .js,.ts .",
     "build": "tsc",

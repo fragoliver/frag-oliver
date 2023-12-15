@@ -1,4 +1,4 @@
-# frag-oliver
+# Frag Oliver
 
 A ChatGPT app for Daddy's website
 
