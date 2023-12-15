@@ -12,5 +12,8 @@
     "deploy": "clear && npm run clean && cd gatsby && npm run build && firebase deploy --only hosting",
     "deploy:api": "clear && firebase deploy --only functions"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "moment": "^2.29.4"
+  }
 }
