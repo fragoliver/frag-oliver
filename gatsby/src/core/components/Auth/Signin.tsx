@@ -31,7 +31,7 @@ export function Signin() {
   const dispatch = usePwaDispatch()
   const core = usePwaSelect(selectCore)
   const display = usePwaSelect(selectDisplay)
-  const [email, setEmail] = React.useState<string>("")
+  const [email, setEmail] = React.useState<string>("fragensieoliver@gmail.com")
   const [password, setPassword] = React.useState<string>("")
   const {signinOpen, authing} = core
   let isBig = false
@@ -55,8 +55,6 @@ export function Signin() {
   }
 
   return (<>
-
-
           <Dialog 
               open={signinOpen}
               fullWidth
@@ -65,7 +63,7 @@ export function Signin() {
               onClose={closeSignin}>
               <DialogTitle>
                 <CardHeader 
-                  avatar={<Avatar src={"/svg/characters/biker.svg"} />}
+                  avatar={<Avatar src={"/svg/characters/.svg"} />}
                   action={<IconButton
                     sx={{m:1}}
                     onClick={() => {
@@ -88,8 +86,8 @@ export function Signin() {
                   <InputEmail autoFocus onChange={setEmail} />
                 </Box>
                 <Box sx={{my:2}}>
-                    <InputPassword onChange={setPassword}/>
-                  </Box>
+                  <InputPassword onChange={setPassword}/>
+                </Box>
               </DialogContent>
 
               <DialogActions>

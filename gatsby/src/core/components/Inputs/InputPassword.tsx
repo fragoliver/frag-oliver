@@ -7,13 +7,15 @@ import {
 export function InputPassword(props: any) {
   const {
     onChange,
+    autoFocus,
   } = props
 
   return (<>
           <Box sx={{my:1}}>
             <TextField 
               fullWidth
-              label="Password"
+              autoFocus={autoFocus}
+              label="Passwort"
               type="password"
               onChange={(e:any) => {
                 onChange(e.target.value)
