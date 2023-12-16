@@ -11,6 +11,5 @@
     "api:lint": "clear && cd ./functions && npm run lint",
     "api:deploy": "clear && firebase deploy --only functions",
     "deploy": "clear && npm run clean && cd gatsby && npm run build && firebase deploy --only hosting"
-  },
-  "license": "MIT"
+  }
 }

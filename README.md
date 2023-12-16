@@ -2,7 +2,6 @@
 
 A ChatGPT app for Daddy's website
 
-
 ## Goldlabel Open Source
 
 > This software is Open Source and Free
