@@ -65,7 +65,7 @@ export function Signin() {
               onClose={closeSignin}>
               <DialogTitle>
                 <CardHeader 
-                  avatar={<Avatar src={"/svg/iOS.svg"} />}
+                  avatar={<Avatar src={"/svg/characters/biker.svg"} />}
                   action={<IconButton
                     sx={{m:1}}
                     onClick={() => {

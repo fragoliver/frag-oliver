@@ -51,7 +51,7 @@ export function MembersOnly() {
         <Container maxWidth="xs">
           <DialogTitle>
                 <CardHeader 
-                  avatar={<Avatar src={"/svg/iOS.svg"} />}
+                  avatar={<Avatar src={"/svg/characters/biker.svg"} />}
                   
                   title={<Font variant="title">
                             Members Only
