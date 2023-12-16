@@ -12,7 +12,6 @@ import {
   selectPingpong,
   selectDisplay,
   selectAuth,
-  selectCore,
   setCoreKey,
 } from "../../core"
 import {
@@ -30,8 +29,7 @@ export default function Pingpong() {
   const auth = usePwaSelect(selectAuth)
   const pingpong = usePwaSelect(selectPingpong)
   const display = usePwaSelect(selectDisplay)
-  const core = usePwaSelect(selectCore)
-  const {signinOpen} = core
+  
   let label = "Sign in"
   let user = null
   if(auth) user = auth.user
@@ -40,6 +38,8 @@ export default function Pingpong() {
   let isBig = false
   let badgeContent = 0
   if (display) isBig = !display.mobile
+
+  const invisible = true
 
   React.useEffect(() => {
     const {
@@ -72,7 +72,7 @@ export default function Pingpong() {
     if (user) dispatch(setCoreKey("accountDialogOpen", true))
     return true
   }
-  
+  if (invisible) return null
   return <>          
           <ButtonBase
             sx={{mt:1.5, p:1, borderRadius: 1}}

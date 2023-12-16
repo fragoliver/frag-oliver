@@ -1,4 +1,6 @@
+
 import React from "react"
+import {glConfig} from "../../../config"
 import {
   Box,
   Button,
@@ -29,7 +31,7 @@ export function MembersOnly() {
   const dispatch = usePwaDispatch()
   const core = usePwaSelect(selectCore)
   const display = usePwaSelect(selectDisplay)
-  const [email, setEmail] = React.useState<string>("")
+  const [email, setEmail] = React.useState<string>("fragensieoliver@gmail.com")
   const [password, setPassword] = React.useState<string>("")
   const {authing} = core
   let isBig = false
@@ -46,15 +48,15 @@ export function MembersOnly() {
       ))
     }
   }
+  const {passwordOnly} = glConfig
 
   return (<>
         <Container maxWidth="xs">
           <DialogTitle>
                 <CardHeader 
-                  avatar={<Avatar src={"/svg/characters/biker.svg"} />}
-                  
+                  avatar={<Avatar src={"/jpg/153920249.jpg"} />}
                   title={<Font variant="title">
-                            Members Only
+                            Frag Oliver
                         </Font>}
                 />
               </DialogTitle>
@@ -64,30 +66,32 @@ export function MembersOnly() {
               </> :  <>
               
               <DialogContent>
-                <Box sx={{my:2}}>
-                  <InputEmail autoFocus onChange={setEmail} />
-                </Box>
-                <Box sx={{my:2}}>
-                    <InputPassword onChange={setPassword}/>
+
+                { !passwordOnly ? <Box sx={{my:2}}>
+                  <InputEmail onChange={setEmail} />
+                </Box> : null}
+                
+                <Box sx={{my:1}}>
+                    <InputPassword autoFocus onChange={setPassword}/>
                   </Box>
               </DialogContent>
 
               <DialogActions>
                 <Button
+                  sx={{mx:2}}
                   className="enterable"
                   color="primary"
+                  variant="outlined"
                   onClick={validate}>
                     <Font variant="small">
-                      Sign In
+                      Weiter
                     </Font>
                     <Box sx={{ml:2, mt:0.5}}>
                       <Icon icon="signin" />
                     </Box>
                 </Button>
               </DialogActions>
-              </>}
-
-
+            </>}
            </Container>
         </>
   )

@@ -33,6 +33,7 @@ export type ConfigShape = {
   theme: ThemeShape
   mapbox?: any
   membersOnly?: boolean
+  passwordOnly?: boolean
   backoffice?: any
   darkmodeEnabled: boolean
   debuggerEnabled: boolean

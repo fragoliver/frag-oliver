@@ -1,4 +1,4 @@
-export type CanaryShape = {
+export type APIShape = {
     output: {
         code: string
         status: string
