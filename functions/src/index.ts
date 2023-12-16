@@ -1,10 +1,25 @@
 import {onRequest} from "firebase-functions/v2/https";
+// import * as firebase from "firebase/app";
 import {APIShape} from "./types";
 import express, {Request, Response} from "express";
 import cors from "cors";
 import moment from "moment";
+// import {
+//   chatgptRoutes,
+// } from "./chatgpt";
 
-const version = "2.0.4";
+// const firebaseConfig = {
+//   apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
+//   authDomain: process.env.REACT_APP_FIREBASE_AUTHDOMAIN,
+//   databaseURL: process.env.REACT_APP_FIREBASE_AUTHDOMAIN,
+//   projectId: process.env.REACT_APP_FIREBASE_PROJECTID,
+//   storageBucket: process.env.REACT_APP_FIREBASE_STORAGEBUCKET,
+//   messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGINGSENDERID,
+//   appId: process.env.REACT_APP_FIREBASE_APPID,
+// };
+// const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+const version = "2.0.5";
 const app = express();
 app.use(cors({credentials: true}));
 
@@ -19,6 +34,8 @@ const respond = (req: Request, res: Response, data: APIShape) => {
   };
   res.json(api);
 };
+
+// chatgptRoutes(app, respond, firebaseApp);
 
 app.all("**", async (req, res) => {
   respond(req, res, {
