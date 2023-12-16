@@ -25,5 +25,6 @@ export const glConfig: ConfigShape = {
     debuggerEnabled: true,
     darkmodeEnabled: true,
     membersOnly: true,
+    passwordOnly: true,
     sharing: true,
 }
