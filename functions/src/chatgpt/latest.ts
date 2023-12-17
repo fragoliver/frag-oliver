@@ -21,8 +21,8 @@ const latest = async (
   const snap = await getDocs(q);
   const list: Array<FirebaseItem> = [];
   snap.forEach((doc) => {
-    const data = doc.data()
-    const {frage, antwort} = data
+    const data = doc.data();
+    const {frage, antwort} = data;
     list.push({
       // fbId: doc.id,
       frage,
