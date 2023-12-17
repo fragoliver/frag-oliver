@@ -1,6 +1,7 @@
 import * as functions from "firebase-functions";
 import {
   latest,
+  neueFrage,
 } from "./";
 
 const routes = (
@@ -15,10 +16,9 @@ const routes = (
     }});
   });
   app.post("/chatgpt/neue-frage", async (req: functions.https.Request, res: unknown) => {
-    // const result = await latest(req, firebaseApp);
+    const result = await neueFrage(req, firebaseApp);
     respond(req, res, {output: {
-      // data: {...result},
-      data: {},
+      data: {...result},
     }});
   });
 };

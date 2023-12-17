@@ -1,0 +1,46 @@
+/* eslint-disable  @typescript-eslint/no-var-requires */
+import {FirebaseItem} from "../types";
+import * as functions from "firebase-functions";
+import * as firebase from "firebase/app";
+import {
+  getFirestore,
+  getDocs,
+  query,
+  // orderBy,
+  limit,
+  collection,
+} from "firebase/firestore";
+
+const neueFrage = async (
+  req: functions.https.Request,
+  firebaseApp: firebase.FirebaseApp,
+) => {
+  const {body} = req
+  const {frage} = body
+  // const db = getFirestore(firebaseApp);
+  // const collectionRef = collection(db, "chatgpt");
+  // const q = query(collectionRef, limit(100));
+  // const snap = await getDocs(q);
+  // const list: Array<FirebaseItem> = [];
+  // snap.forEach((doc) => {
+  //   list.push({
+  //     fbId: doc.id,
+  //     data: doc.data(),
+  //   });
+  // });
+
+  // check if this question has been arkst
+  // if not, do a ChatGPT API fetch with the frage as prompt
+  // if so, return saved response
+  const cached = false
+  const antwort = "Hier is der Antwort"
+  return {
+    code: "chatGPT 200",
+    message: "Neue Frage",
+    frage,
+    antwort,
+    cached,
+  };
+};
+
+export default neueFrage;
