@@ -15,7 +15,8 @@ const routes = (
       data: {...result},
     }});
   });
-  app.post("/chatgpt/neue-frage", async (req: functions.https.Request, res: unknown) => {
+  app.post("/chatgpt/neue-frage", async (
+    req: functions.https.Request, res: any) => {
     const result = await neueFrage(req, firebaseApp);
     respond(req, res, {output: {
       data: {...result},
