@@ -19,7 +19,7 @@ import moment from "moment";
 // };
 // const firebaseApp = firebase.initializeApp(firebaseConfig);
 
-const version = "2.0.5";
+const version = "2.0.6";
 const app = express();
 app.use(cors({credentials: true}));
 
@@ -42,7 +42,7 @@ app.all("**", async (req, res) => {
     output: {
       code: "200",
       status: "success",
-      message: "Welcome to Frag Oliver API. How can we help?",
+      message: "Frag mich etwas",
     },
   });
 });
