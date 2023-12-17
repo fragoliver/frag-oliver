@@ -20,7 +20,7 @@ if (firebaseApp) {
   console.log("firebaseApp");
 }
 
-const version = "2.0.6";
+const version = "2.0.8";
 const app = express();
 app.use(cors({credentials: true}));
 
@@ -36,7 +36,7 @@ const respond = (req: Request, res: Response, data: APIShape) => {
   res.json(api);
 };
 
-chatgptRoutes(app, respond/* , firebaseApp*/);
+chatgptRoutes(app, respond, firebaseApp);
 
 app.all("**", async (req, res) => {
   respond(req, res, {
