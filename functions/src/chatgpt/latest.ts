@@ -12,8 +12,8 @@ import {
 } from "firebase/firestore";
 
 const latest = async (
-    req: functions.https.Request,
-    firebaseApp: firebase.FirebaseApp,
+  req: functions.https.Request,
+  firebaseApp: firebase.FirebaseApp,
 ) => {
   const db = getFirestore(firebaseApp);
   const collectionRef = collection(db, "chatgpt");
@@ -21,16 +21,19 @@ const latest = async (
   const snap = await getDocs(q);
   const list: Array<FirebaseItem> = [];
   snap.forEach((doc) => {
+    const data = doc.data();
+    const {frage, antwort} = data;
     list.push({
-      fbId: doc.id,
-      data: doc.data(),
+      // fbId: doc.id,
+      frage,
+      antwort,
     });
   });
   return {
     code: "chatGPT",
-    message: "Latest 100",
-    total: list.length,
+    message: "Latest",
     list,
+    total: list.length,
   };
 };
 
