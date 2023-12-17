@@ -1,7 +1,5 @@
-// import chatgptRoutes from "./routes";
-// import latest from "./latest";
+import chatgptRoutes from "./routes";
 
-// export {
-//   chatgptRoutes,
-//   latest,
-// };
+export {
+  chatgptRoutes,
+};
