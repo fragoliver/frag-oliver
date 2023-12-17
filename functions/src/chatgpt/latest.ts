@@ -12,8 +12,8 @@ import {
 } from "firebase/firestore";
 
 const latest = async (
-    req: functions.https.Request,
-    firebaseApp: firebase.FirebaseApp,
+  req: functions.https.Request,
+  firebaseApp: firebase.FirebaseApp,
 ) => {
   const db = getFirestore(firebaseApp);
   const collectionRef = collection(db, "chatgpt");
@@ -28,9 +28,9 @@ const latest = async (
   });
   return {
     code: "chatGPT",
-    message: "Latest 100",
-    total: list.length,
+    message: "Latest",
     list,
+    total: list.length,
   };
 };
 

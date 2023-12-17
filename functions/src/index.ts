@@ -16,9 +16,6 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_FIREBASE_APPID,
 };
 const firebaseApp = firebase.initializeApp(firebaseConfig);
-if (firebaseApp) {
-  console.log("firebaseApp");
-}
 
 const version = "2.0.8";
 const app = express();

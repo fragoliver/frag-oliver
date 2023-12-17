@@ -7,5 +7,5 @@ export type APIShape = {
 }
 export type FirebaseItem = {
     fbId: string
-    data?: any
+    data?: unknown
 }
