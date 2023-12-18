@@ -56,8 +56,6 @@ npm install
 cd ../
 npm run api
 ```
-
-
 ## Techstack
 
 #### Firebase Cloud Functions

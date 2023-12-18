@@ -2,26 +2,24 @@
 // import {FirebaseItem} from "../types";
 import * as functions from "firebase-functions";
 import * as firebase from "firebase/app";
+// import {ChatGPTAPI} from "chatgpt";
 import {
   getFirestore,
   collection,
   query,
   where,
   getDocs,
-  addDoc,
+  // addDoc,
 } from "firebase/firestore";
 
 const neueFrage = async (
   req: functions.https.Request,
   firebaseApp: firebase.FirebaseApp,
 ) => {
-  const {body} = req;
-  const {frage} = body;
-  // check if this question has been arkst before
-  // if so, return saved response
   let data = null;
   const answer = "Frag Oliver of course!";
-
+  const {body} = req;
+  const {frage} = body;
   const db = getFirestore(firebaseApp);
   const ref = collection(db, "chatgpt");
   const q = query(ref, where("frage", "==", frage));
@@ -33,15 +31,16 @@ const neueFrage = async (
     };
   });
   if (!data) {
-    // if not, do a ChatGPT API fetch with the frage as prompt to get the answer
-
-    const newDoc = await addDoc(ref, {
-      time: Date.now(),
-      frage,
-      antwort: answer,
-    });
+    // const apiKey = process.env.OPENAI_API_KEY || "";
+    // const api = new ChatGPTAPI({apiKey});
+    // const res = await api.sendMessage("Hello World!");
+    // const newDoc = await addDoc(ref, {
+    //   time: Date.now(),
+    //   frage,
+    //   antwort: "res",
+    // });
     data = {
-      fbId: newDoc.id,
+      // fbId: newDoc.id,
       frage,
       antwort: answer,
     };
