@@ -3,12 +3,11 @@ import React from "react"
 import {glConfig} from "../../../config"
 import {
   Box,
-  Button,
+  IconButton,
   Avatar,
   Container,
   DialogTitle,
   DialogContent,
-  DialogActions,
   CardHeader,
   LinearProgress,
 } from "@mui/material"
@@ -71,26 +70,24 @@ export function MembersOnly() {
                   <InputEmail onChange={setEmail} />
                 </Box> : null}
                 
-                <Box sx={{my:1}}>
+                <Box sx={{display:"flex"}}>
+
+                
+                  <Box sx={{flexGrow:1}}>
                     <InputPassword autoFocus onChange={setPassword}/>
                   </Box>
-              </DialogContent>
 
-              <DialogActions>
-                <Button
-                  sx={{mx:2}}
-                  className="enterable"
-                  color="primary"
-                  variant="outlined"
-                  onClick={validate}>
-                    <Font variant="small">
-                      Weiter
-                    </Font>
-                    <Box sx={{ml:2, mt:0.5}}>
-                      <Icon icon="signin" />
-                    </Box>
-                </Button>
-              </DialogActions>
+                  <Box sx={{my:2}}>
+                    <IconButton
+                      sx={{mx:2}}
+                      color="primary"
+                      onClick={validate}>
+                          <Icon icon="signin" />
+                    </IconButton>
+                  </Box>
+
+                </Box>
+              </DialogContent>
             </>}
            </Container>
         </>

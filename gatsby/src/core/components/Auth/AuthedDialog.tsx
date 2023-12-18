@@ -68,7 +68,7 @@ export function AuthedDialog() {
                             Signed In
 
                         </Font>}
-                  avatar={<Avatar src={"/svg/characters/biker.svg"} />}
+                  avatar={<Avatar src={"/svg/iOS.svg"} />}
                   action={<IconButton
                     sx={{m:1}}
                     onClick={() => {
