@@ -25,6 +25,7 @@ import {
   navigate,
   selectAuth,
   PingPublic,
+  firebaseSignout,
 } from "../../../core"
 
 export default function SystemMenu() {
@@ -122,6 +123,23 @@ export default function SystemMenu() {
                                 Debugger
                               </Font> }/>
                   </ListItemButton> : null }
+
+                  <ListItemButton
+                    sx={{mb:1}}
+                    color="primary"
+                    onClick={(e: React.MouseEvent) => {
+                      e.preventDefault()
+                      dispatch(setCoreKey("footerMenuOpen", false))
+                      dispatch(firebaseSignout())
+                    }}>
+                  <ListItemIcon>
+                    <Icon icon={"signout"} color="primary"/>
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={<Font>
+                                Sign out
+                              </Font> }/>
+                  </ListItemButton>
                 
 
                 {darkmodeEnabled ? <>
@@ -153,7 +171,7 @@ export default function SystemMenu() {
               <Box sx={{flexGrow:1}} />
               <Box sx={{m:1}}>
                 <Font variant="small" color="muted">
-                  Goldlabel {version}
+                 &copy; Goldlabel {version}
                 </Font>
               </Box>
             </DialogActions>
@@ -161,22 +179,3 @@ export default function SystemMenu() {
         
         </>)
 }
-
-/*
-<ListItemButton
-                    sx={{mb:1}}
-                    color="primary"
-                    onClick={(e: React.MouseEvent) => {
-                      e.preventDefault()
-                      dispatch(setCoreKey("footerMenuOpen", false))
-                      dispatch(navigate("https://github.com/listingslab-software/open-source", "_blank"))
-                    }}>
-                  <ListItemIcon>
-                    <Icon icon={"github"} color="primary"/>
-                  </ListItemIcon>
-                  <ListItemText
-                    primary={<Font>
-                                Open Source
-                              </Font> }/>
-                  </ListItemButton>
-                  */

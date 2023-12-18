@@ -1,6 +1,6 @@
 # Frag Oliver
 
-A ChatGPT app for Daddy's website
+A ChatGPT app for Daddy's lawyer WordPress website 
 
 ## Goldlabel Open Source
 
@@ -12,7 +12,7 @@ Identify where you're going to clone the repository. We'll call this `<working-r
 
 ```bash
 cd <working-dir>
-git clone https://github.com/listingslab-software/open-source <your-project>
+git clone https://github.com/fragoliver/frag-oliver <your-project>
 cd <your-project>
 cd gatsby
 npm install
@@ -47,12 +47,26 @@ Start with the command `npm start`
 When Gatsby has finished starting the dev server, it's available on 
 http://localhost:8000
 
+# API
 
-## Firebase Cloud Functions
+```bash
+cd <working-dir>
+cd functions
+npm install
+cd ../
+npm run api
+```
+
+
+## Techstack
+
+#### Firebase Cloud Functions
 
 Cloud Functions for Firebase is a serverless framework that lets you automatically run backend code in response to events triggered by background events, HTTPS requests, the Admin SDK, or Cloud Scheduler jobs. Your JavaScript, TypeScript or Python code is stored on Google Cloud infrastructure and runs in a managed environment. There's no need to manage and scale your own servers
 
-## Express
+#### Express
+
+RESTful API runs an express app when required. it does not have to be running all the time
 
 ```javascript
 const app = express();

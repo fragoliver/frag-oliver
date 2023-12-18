@@ -7,15 +7,15 @@ export const glConfig: ConfigShape = {
     siteDisplayname: "Oliver",
     siteUrl: "https://frag-oliver.web.app/",
     siteFacebook: "https://www.facebook.com/listingslabspage",
-    siteKeywords: "listingslab, goldlabel, opensource",
+    siteKeywords: "law",
     siteImage: "/jpg/153920249.jpg",
-    siteIcon: "/svg/characters/biker.svg",
+    siteIcon: "/svg/iOS.svg",
     siteTwitter: "@listingslab",
-    siteTheme: "#22939C",
+    siteTheme: "#333",
     theme: {
-        slug: "teal",
-        primaryColor: "#22939C",
-        secondaryColor: "#126970",
+        slug: "black",
+        primaryColor: "#333",
+        secondaryColor: "#222",
         defaultDarkmode: false,
     },
     mapbox: {
@@ -23,8 +23,8 @@ export const glConfig: ConfigShape = {
         dark: "mapbox://styles/listingslab/clmrnt68o02a801qxevn0bt6u"
     },
     debuggerEnabled: true,
-    darkmodeEnabled: true,
+    darkmodeEnabled: false,
     membersOnly: true,
     passwordOnly: true,
-    sharing: true,
+    sharing: false,
 }

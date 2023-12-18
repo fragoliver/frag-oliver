@@ -5,3 +5,9 @@ export type APIShape = {
         message: string
     }
 }
+export type FirebaseItem = {
+    fbId?: string
+    data?: unknown
+    frage?: string
+    antwort?: string
+}
