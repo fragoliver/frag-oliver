@@ -78,7 +78,7 @@ export default function ListingMobile(props: any) {
                                 e.preventDefault()
                                 dispatch(navigate("/", "_self"))
                             }}>
-                            <Avatar src="/svg/characters/biker.svg" alt={`${title} ${description}`} />
+                            <Avatar src="/svg/iOS.svg" alt={`${title} ${description}`} />
                         </IconButton>}
                 
               />
